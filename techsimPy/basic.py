@@ -20,9 +20,12 @@
 # college = input("enter your college name:")
 # print(f"Hello!, my name is {fname} {lname}, i am from {add}, i have completed my graduation from {college}")
 
-msg = input("enter your msg:")
-num = int(input("enter no:"))
+# msg = input("enter your msg:")
+# num = int(input("enter no:"))
 
-msg = msg[num:]
-print(msg)
+# msg = msg[num:]
+# print(msg)
 
+# string = input("Enter the sentence")
+# num = int(input("Enter no "))
+# print(string[0:num].upper() + string[num:].lower())
