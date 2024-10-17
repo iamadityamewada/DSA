@@ -69,6 +69,34 @@
 # print(li)
 # print(popEle)
 
-li = [4,6,5,4,3,7,10,4]
+# li = [4,6,5,4,3,7,10,4]
+# print(li.index())
+# print(li.count(14))
+# li.reverse()
+# print(li)
+# li.sort(reverse=True)
+# li.reverse()
+# print(li)
 
+
+#shallow coppy
+
+# li = [1,2,3,4,5,6]
+# li2 = li
+# li2.append(100)
+# li.remove(1)
+# print(id(li))
+# print(id(li2))
+
+#Deepcopy
+# l1 = [100,32,12,45,23]
+# l2 = l1.copy()
+# print(id(l1))
+# print(id(l2))
+
+# li = [3,6,7,3,4,5,34]
+# print("Anshu" in li)
+# belong_mars_list = ["Anshu"]
+# print("Adii" in belong_mars_list)
+# print("Anshu" not in belong_mars_list)
 
