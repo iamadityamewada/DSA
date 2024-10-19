@@ -34,13 +34,13 @@
 # college = input("Enter your college: ")
 # dic["college"] = college
 
-dic = {
-    "sname":"Aditya",
-    "age":23,
-    # "sname":"Anshu", # repalce the value of old key
-    "skills":["javaScript","Python"],
-    "branch":"CS"
-}
+# dic = {
+#     "sname":"Aditya",
+#     "age":23,
+#     # "sname":"Anshu", # repalce the value of old key
+#     "skills":["javaScript","Python"],
+#     "branch":"CS"
+# }
 
 # key = input("enter key:")
 # print(dic.get(key, "key not found"))
@@ -55,6 +55,22 @@ dic = {
 
 # print(dic.pop("branch"))
 
+# dic = {
+#     "sname":"Aditya",
+#     "age":23,
+#     # "sname":"Anshu", # repalce the value of old key
+#     "skills":["javaScript","Python"],
+#     "branch":"CS",
+#     "address":{
+#         "city":"bhopal",
+#         "state":"MP",
+#         "pin":{
+#             "pincode":462022
+#         }
+#     }
+# }
+# print(dic["address"]["pin"]["pincode"])
 
+# key name will be string , tuple, integer value, (which are unique and immutable)
 
-print(dic)
+# print(dic)

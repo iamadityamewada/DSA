@@ -68,3 +68,49 @@
 # li.insert(postion,num)
 # print(li)
 #...........................................08.............................................................
+
+# age = int(input("Enter your age: "))
+
+# if age>=18:
+#     print("You are eligible for driving license")
+
+# ........................................09....................................................................
+
+# temp = int(input("enter temp: "))
+
+# if temp>30:
+#     print("koi ac chala do yaar")
+# elif temp<10:
+#     print("bhai heater chala do thandi lag rahi hai")
+# else:
+#     print("koi dikkat nahi sab mast hai") 
+# 
+
+#...........................................10................................................................
+
+# age = int(input("enter the age: "))
+
+# if age<12:
+#     print("the prize is 150")
+# elif age >= 60:
+#     print("the prize is 200")
+# else:
+#     print("the prize is 300")  
+# 
+# ...........................................11..............................................................
+# no = int(input("enter number"))
+# if no % 2 == 0:
+#     print("even")
+# else:
+#     print("odd")    
+
+#..............................................12...............................................................
+
+day = input("enter the day: ")
+workday = ["monday", "tuesday", "wednesday","thursday","friday"]
+if day.lower()=="saturday" or day.lower()=="sunday":
+    print("you can relax")
+elif day.lower() in workday:
+    print("its working day")
+else:
+    print("you enter the wrong day")        
