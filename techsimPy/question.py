@@ -106,11 +106,62 @@
 
 #..............................................12...............................................................
 
-day = input("enter the day: ")
-workday = ["monday", "tuesday", "wednesday","thursday","friday"]
-if day.lower()=="saturday" or day.lower()=="sunday":
-    print("you can relax")
-elif day.lower() in workday:
-    print("its working day")
-else:
-    print("you enter the wrong day")        
+# day = input("enter the day: ")
+# workday = ["monday", "tuesday", "wednesday","thursday","friday"]
+# if day.lower()=="saturday" or day.lower()=="sunday":
+#     print("you can relax")
+# elif day.lower() in workday:
+#     print("its working day")
+# else:
+#     print("you enter the wrong day")   
+# 
+# ...........................................................13...........................................................
+# # 
+
+# fruits = ["apple","banana","cherry","mango"]
+# # find banana in list and print banana is found
+# for _ in fruits:
+#     if _.lower() == "banana":
+#         print("banana is found")
+
+#.........................................................14...................................................................
+
+# names = ["John", "Alice","BoB","Zara"]
+# for x in names:
+#     if x[0].lower() == "a":
+#         print(x)
+
+#.......................................................15......................................................................
+
+# words = ["apple","banana","cherry","mango"]
+
+# for x in words:
+#     if len(x) > 5:
+#         print(x)
+
+#........................................................16...........................................................................
+
+# numbers = [-4,-5,-9,-4,-56,-32,4,5,3]
+
+# for num in numbers:
+#     if num<0:
+#       print("nagative number found")          
+#     break
+# else:
+#    print("no nagative number")
+#............................................................17...................................................................
+
+# av = 5
+
+# order = int(input("enter count of candy: "))
+
+# for i in range(0,av):
+#         print("candy")
+#         if i == order-1:
+#               break         
+# else:
+#    print("out of stock")
+
+#/.............................................................18..................................................................
+
+
