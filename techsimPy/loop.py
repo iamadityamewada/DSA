@@ -88,24 +88,32 @@
 #     print(i)
 
 
-s="hello"
-new=[]
-li=list(s)
-for i in s:
-    last_char = li.pop()
-    li.insert(0,last_char)
-    ab = "".join(li)
-    new.append(ab)
-print(new)
+# s="hello"
+# new=[]
+# li=list(s)
+# for i in s:
+#     last_char = li.pop()
+#     li.insert(0,last_char)
+#     ab = "".join(li)
+#     new.append(ab)
+# print(new)
 
 
-s = "hello"
-li = list(s)
-new =[]
+# s = "hello"
+# li = list(s)
+# new =[]
 
-for s in li:
-    last_char = li.pop()
-    li.insert(0,last_char)
-    ab = "".join(li)
-    new.append(ab)
-print(new)
+# for s in li:
+#     last_char = li.pop()
+#     li.insert(0,last_char)
+#     ab = "".join(li)
+#     new.append(ab)
+# print(new)
+
+
+# li = [23,56,34,23,12]
+# li1= [3,5,6,3,3]
+
+# for i in range(5):
+#     print(li[i], li1[i])
+
