@@ -111,9 +111,52 @@
 # print(new)
 
 
-# li = [23,56,34,23,12]
-# li1= [3,5,6,3,3]
+# li = [23,56,34,23,12,45,32,67,45,78,90]
+# li1= [3,5,6,3,3,5,7]
 
 # for i in range(5):
 #     print(li[i], li1[i])
+
+# for i in zip(li , li1): # return a zip tuple
+#     # print(i)
+#     print(i[0],i[1])
+
+# for i,j in zip(li , li1): # return a zip tuple
+#     # print(i)
+#     print(i,j)
+
+# li = [2,3]
+# for i in li :
+#     print("Hello")
+#     li.append(i)
+
+# 101010101
+#  1010101
+#   10101
+#    101
+#     1
+
+# for i in range(9,1,-2):
+#     print()
+
+
+# count = 0
+# for i in li:
+#     if i == 23:
+#          count = count+1 
+# print(count)   
+# 
+
+# li = [23,56,34,23,12,45,32,67,45,78,90]
+# num = 1
+# for i in range(0, len(li)):
+#     if i == num:
+#       li[i] = li[i+1]
+#     else:   
+#        li[i] = li[i]
+# print(li) 
+
+# li = li[0:num] + li[num+1:]
+# print(li)
+
 
