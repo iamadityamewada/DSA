@@ -39,21 +39,27 @@
 
 #dictionary is iterable and return key value in i 
 
-dic = {
-    "name":"Aditya",
-    "college":"LNCT",
-    'age':"21",
-    "company":{
-        "name":"tcs",
-        "salary":"11LPA",
-        "Address":{
-            "city":{
-            "name":"Indore"
-        }
-    }
-}
-}
+# dic = {
+#     "name":"Aditya",
+#     "college":"LNCT",
+#     'age':"21",
+#     "company":{
+#         "name":"tcs",
+#         "salary":"11LPA",
+#         "Address":{
+#             "city":{
+#             "name":"Indore"
+#         }
+#     }
+# }
+# }
 
-for i in dic:
-    print(i, dic[i])
+# for i in dic:
+#     print(i, dic[i])
+
+#pass the code 
+#continue jump to the next itteration
+#break break the loop
+
+
 
