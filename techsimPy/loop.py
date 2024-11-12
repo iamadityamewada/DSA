@@ -160,3 +160,37 @@
 # print(li)
 
 
+# while loop
+
+# i = 0
+# while(i<6):
+#     print(i)
+#     i+=1
+
+# i = 5
+# while(i>-1):
+#     print(i)
+#     i-=1
+
+username = ["user1","user2","user3"]
+password = ["1234","5678","4567"]
+
+while(True):
+    option = int(input("enter 1:Login 2:SignUp"))
+    if option == 1 :
+      name = input("Username: ")
+      passw = input("Password: ")
+      if name not in username:
+          print("invalid username")
+      else:
+        if passw == password[username.index(name)]:
+          print("Login SuccessFully")
+        else:
+          print("incorrect password") 
+    elif option == 2:
+      name = input("Username: ")
+      password = input("name: ")
+      print("SignUp")
+    else:
+      print("Invalid Input")
+ 
