@@ -172,25 +172,57 @@
 #     print(i)
 #     i-=1
 
-username = ["user1","user2","user3"]
-password = ["1234","5678","4567"]
+# username = ["user1","user2","user3"]
+# password = ["1234","5678","4567"]
 
-while(True):
-    option = int(input("enter 1:Login 2:SignUp"))
-    if option == 1 :
-      name = input("Username: ")
-      passw = input("Password: ")
-      if name not in username:
-          print("invalid username")
-      else:
-        if passw == password[username.index(name)]:
-          print("Login SuccessFully")
-        else:
-          print("incorrect password") 
-    elif option == 2:
-      name = input("Username: ")
-      password = input("name: ")
-      print("SignUp")
-    else:
-      print("Invalid Input")
- 
+# while(True):
+#     option = int(input("enter 1:Login 2:SignUp"))
+#     if option == 1 :
+#       name = input("Username: ")
+#       passw = input("Password: ")
+#       if name not in username:
+#           print("invalid username")
+#       else:
+#         if passw == password[username.index(name)]:
+#           print("Login SuccessFully")
+#         else:
+#           print("incorrect password") 
+#     elif option == 2:
+#       while True:
+#         name = input("Enter Username: ")
+#         if name not in username:
+#             passwd = input("Enter password: ")
+#             confirmPass = input("Confirm Password: ")
+#             if passwd == confirmPass:
+#               name and username.append(name)
+#               passwd and password.append(passwd)
+#               print("SignUp SuccessFully")
+#             else:
+#               print("confirm password doesn't match")  
+#         else:
+#             print("user already exits")
+#     else:
+#       print("Invalid Input")
+#     # print(username , password)  
+    
+
+# wipro sum of digit without typecasting
+
+# num = 45687
+# res = 0
+# while num!=0:
+#     res = res + num%10
+#     num = num//10
+# print("sum is:", res) 
+
+
+#  count the digit without typecasting
+
+# num = 45687
+# resCount = 0
+# while num!=0:
+#     resCount +=1
+#     num = num//10
+# print("Count is:", resCount) 
+
+    
