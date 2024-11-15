@@ -45,4 +45,4 @@ def calc(num1, num2,opp):
     else:
         return("not valid input")
         
-print(calc(0,3,"/"))        
+print(calc(0,3,"/"))
