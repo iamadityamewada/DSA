@@ -66,6 +66,6 @@
 # print(def_fun(4,3))
 
 
-def show_employee(name,salary=15000):
-    print(f"your name is {name} and your salary is {salary}")
-show_employee("Priya")
+# def show_employee(name,salary=15000):
+#     print(f"your name is {name} and your salary is {salary}")
+# show_employee("Priya")
