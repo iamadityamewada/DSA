@@ -19,6 +19,15 @@ class Game:
         else:     
           print("Life: " , self.life , self.name)
 
+    def add_life(self):
+        if self.life>0 and self.life < 5:
+           self.life += 1
+           print("life increase by 1")
+        elif self.life == 0:
+            print( f"{self.name} is already dead")   
+        elif self.life == 5:
+           print(f"{self.name} have enough life")      
+
 p1 = Game()
 p2 = Game()
 
