@@ -11,5 +11,3 @@ class Stack:
            self.stack.pop()
         else:
             print("stack is empty")
-    
-                           
