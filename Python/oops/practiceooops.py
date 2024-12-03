@@ -131,3 +131,71 @@ vehicle = Vehicle()
 car = Car()
 vehicle.move()
 car.move()
+
+
+# Multiple Inheritance
+
+class Teacher:
+    def _init_(self, name):
+        self.name = name
+    
+    def introduce(self):
+        print(f"I am {self.name}")
+
+class Student:
+    def _init_(self, name):
+        self.name = name
+    
+    def introduce(self):
+        print(f"I am {self.name}")
+
+class TeachingAssistant(Teacher, Student):
+    def _init_(self, name):
+        super()._init_(name)
+    
+    def introduce(self):
+        print(f"I am {self.name}, a teaching assistant")
+
+# Create object and call method
+ta = TeachingAssistant("Bob")
+ta.introduce()
+
+# Dynamic Method Binding
+
+class Bird:
+    def fly(self):
+        print("Flying")
+
+class Penguin(Bird):
+    def fly(self):
+        print("I cannot fly")
+
+# Create objects and call method
+bird = Bird()
+penguin = Penguin()
+bird.fly()
+penguin.fly()
+
+
+# Undo Operation
+
+class TextEditor:
+    def _init_(self):
+        self.history = []
+    
+    def write(self, text):
+        self.history.append(text)
+    
+    def undo(self):
+        if self.history:
+            self.history.pop()
+    
+    def get_text(self):
+        return "".join(self.history)
+
+# Create object and simulate operations
+editor = TextEditor()
+editor.write("Hello ")
+editor.write("World!")
+editor.undo()
+print(editor.get_text())
