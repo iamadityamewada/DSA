@@ -18,6 +18,7 @@ class DoublyLinkedList:
             temp = temp.next
         print(temp)
 
+
     def append(self,value):
         new_node = Node(value)
         if self.head == None:
@@ -63,15 +64,39 @@ class DoublyLinkedList:
                 self.head = None
                 self.tail = None
 
-    def get(self,index):
+    def getNode(self,index):
         if index >= 0 and index <= self.length:
             temp = self.head
             for _ in range(index):
                 temp = temp.next
-            print(temp.value)
+            # print(temp.value)
             return temp
         else:
-            print ("index out of range")    
+            return None    
+    
+    def getValue(self,index):
+        node = self.getNode(index)
+        if(node):
+            print(node.value)
+        else:
+            print("index out of range") 
+
+    def insert(self, index, value):
+        if index< 0 or index > self.length - 1:
+            print(None)
+        elif index == 0:
+            self.prepend(value) 
+        elif index == self.length:
+            self.append(value)   
+        else:
+            new_node = Node(value)
+            before = self.getNode(index-1)
+            after = before.next
+            new_node.next = after
+            new_node.prev = before
+            before.next = new_node
+            after.prev = new_node
+            self.length +=1
 
 
 dll = DoublyLinkedList()
@@ -82,5 +107,10 @@ dll.append(20)
 dll.append(19)
 dll.printlist()
 
-dll.get(3)
+node = dll.getNode(4)
 
+print("node.value: ", node.value)
+dll.getValue(6)
+dll.printlist()
+dll.insert(2,22)
+dll.printlist()
