@@ -162,16 +162,16 @@ class LinkedList:
             self.length -= 1    
             return temp.value
 
-ls = LinkedList()
-ls.append(23)
-ls.append(24)
-ls.append(32)
-ls.append(28)
-ls.append(42)
-ls.append(23)
-ls.print_list()
-ls.remove(4)
-ls.print_list()
+# ls = LinkedList()
+# ls.append(23)
+# ls.append(24)
+# ls.append(32)
+# ls.append(28)
+# ls.append(42)
+# ls.append(23)
+# ls.print_list()
+# ls.remove(4)
+# ls.print_list()
 
 
 
@@ -198,3 +198,26 @@ ls.print_list()
 
 # print(ls.head.value)
 # print(ls.tail.value)
+
+ls = LinkedList()
+ls.append(23)
+ls.append(24)
+ls.append(32)
+ls.append(28)
+ls.append(42)
+ls.append(23)
+ls.print_list()
+
+ls1 = LinkedList()
+ls1.append(49)
+ls1.append(53)
+ls1.append(78)
+
+ls1.print_list()
+
+temp = ls.head
+while temp.next is not None:
+    temp = temp.next
+temp.next = ls1.head
+
+ls.print_list()
