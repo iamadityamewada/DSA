@@ -83,11 +83,11 @@ class LinkedList:
                                  
     #     print(temp)
     def get(self,index):
-        if index >= 0 and index <= self.length:
-            temp = self.head
+        temp = self.head
+        if index >= 0 and index < self.length:
             for _ in range(index):
                 temp = temp.next
-            print(temp.value)
+            # print(temp.value)
             return temp
         else:
             print ("index out of range")
@@ -97,7 +97,7 @@ class LinkedList:
             temp.value = val
 
     def insert(self, index, value):
-        if index <0 or index > self.length - 1:
+        if index < 0 or index > self.length - 1:
             print(None)
         elif index == 0:
             self.prepend(value)
@@ -109,7 +109,7 @@ class LinkedList:
             temp = pre_node.next
             pre_node.next = new_node
             new_node.next = temp 
-            self.length +=1  
+            self.length += 1  
 
     def remove(self, index):
         if index <0 or index > self.length - 1:
@@ -162,6 +162,69 @@ class LinkedList:
             self.length -= 1    
             return temp.value
 
+
+    def removeDublicate(self):  
+            new = LinkedList()
+            temp = self.head
+            while temp is not None:
+                if new.head is not None:
+                    new.append(temp.value)
+                else:
+                    is_exit = False
+                    newtemp = new.head
+                    while newtemp is not None:
+                        if temp.value == newtemp.value:
+                            is_exit = True
+                            break
+                        newtemp = newtemp.next
+
+                    if not is_exit:
+                        new.append(temp.value)
+                temp = temp.next
+            self.head = new.head               
+
+
+
+
+
+
+    # def reverse(self):
+    #     lindex = self.length - 1 
+    #     for i in range(int((self.length - 1)/2)):
+    #         temp = self.get(i)
+    #         ltemp = self.get(lindex)
+    #         temp.value
+    #         self.insert(i,ltemp)
+    #         self.insert(lindex,temp)
+    #         lindex = lindex - 1
+
+    # def reverse(self):
+    #      prev = None
+    #      current = self.head
+    #      while current is not None:
+    #          next_node = current.next
+    #          current.next = prev
+    #          prev = current
+    #          current = next_node
+
+    #      self.head = prev     
+
+
+
+
+
+ls = LinkedList()
+ls.append(23)
+ls.append(24)
+ls.append(24)
+ls.append(28)
+ls.append(23)
+ls.append(65)
+ls.append(45)
+ls.print_list()
+ls.removeDublicate()
+ls.print_list()            
+
 # ls = LinkedList()
 # ls.append(23)
 # ls.append(24)
@@ -199,25 +262,25 @@ class LinkedList:
 # print(ls.head.value)
 # print(ls.tail.value)
 
-ls = LinkedList()
-ls.append(23)
-ls.append(24)
-ls.append(32)
-ls.append(28)
-ls.append(42)
-ls.append(23)
-ls.print_list()
+# ls = LinkedList()
+# ls.append(23)
+# ls.append(24)
+# ls.append(32)
+# ls.append(28)
+# ls.append(42)
+# ls.append(23)
+# ls.print_list()
 
-ls1 = LinkedList()
-ls1.append(49)
-ls1.append(53)
-ls1.append(78)
+# ls1 = LinkedList()
+# ls1.append(49)
+# ls1.append(53)
+# ls1.append(78)
 
-ls1.print_list()
+# ls1.print_list()
 
-temp = ls.head
-while temp.next is not None:
-    temp = temp.next
-temp.next = ls1.head
+# temp = ls.head
+# while temp.next is not None:
+#     temp = temp.next
+# temp.next = ls1.head
 
-ls.print_list()
+# ls.print_list()
