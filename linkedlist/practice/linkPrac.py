@@ -129,11 +129,13 @@ class LinkedList:
             temp = temp.next    
         
         temp = small.head
-        while temp.next is not None:
-            temp = temp.next   
-        temp.next = greater.head  
-        self.head = small.head                       
-
+        if temp:
+            while temp.next is not None:
+                temp = temp.next   
+            temp.next = greater.head  
+            self.head = small.head                       
+        else:
+            self.head = greater.head
 ls = LinkedList()
 ls.append(44)
 ls.append(33)
