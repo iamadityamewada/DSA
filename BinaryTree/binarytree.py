@@ -57,6 +57,73 @@ class BinarySearchTree:
             if right:
                 queue.append(right)
         print(res)
+
+    # def preorder(self):
+    #     if self.root == None:
+    #         return []
+    #     stack =[]
+    #     res = []
+    #     stack.append(self.root)
+    #     while len(stack) > 0:
+    #         lastnode = stack.pop()
+    #         res.append(lastnode.value)
+    #         if lastnode.right:
+    #             stack.append(lastnode.right)
+    #         if lastnode.left:
+    #             stack.append(lastnode.left)
+    #     print(res)       
+
+    def preorder(self):
+        def traverse(node):
+            if node == None:
+                return None
+            if node:
+                print(node.value, end=" ")
+            if node.left:
+                traverse(node.left)
+            if node.right:
+                traverse(node.right)
+        traverse(self.root)  
+        print("")  
+
+    def postorder(self): 
+        def traverse(node):
+            if node == None:
+                return None
+            if node.left:
+                traverse(node.left)
+            if node.right:
+                traverse(node.right)
+            if node:
+                print(node.value, end=" ")
+        traverse(self.root)
+        print("")
+
+    def inorder(self):
+        result = []
+        def traverse(node):
+            if node == None:
+                return None
+            if node.left:
+                traverse(node.left)
+            if node:
+                print(node.value, end=" ")
+                result.append(node.value)
+            if node.right:
+                traverse(node.right)
+        traverse(self.root) 
+        print("")
+        return(result)
+
+    def is_valid_tree(self):
+        values = self.inorder()
+        for i in range(len(values)):
+            for j in range(i+1,len(values)):
+                if values[i] > values[j]:
+                    return False
+        return True 
+
+    def                
                     
 
     def print_tree(self):
@@ -75,4 +142,18 @@ tree.insert(23)
 # print(tree.contains(42))
 # print(tree.contains(99))
 
-tree.bfs()        
+'''
+       45  
+   26        
+23    42
+   33    43    
+
+
+'''
+
+tree.bfs()  
+tree.preorder()
+tree.postorder()
+tree.inorder()
+
+print(tree.is_valid_tree())
