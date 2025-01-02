@@ -122,36 +122,58 @@ class BinarySearchTree:
                 if values[i] > values[j]:
                     return False
         return True 
-                                
+    
+    def getHeight(self):
+        if self.root == None:
+            return -1
+        def height(node):
+            if node == None:
+                return 0
+            if node.left == None and node.right == None:
+                return 0
+            left_height = height(node.left)
+            right_height = height(node.right)
+            return 1 + max(left_height,right_height)
+        return height(self.root)
 
-    def print_tree(self):
-        # temp = self.root
-        pass
+    def countNode(self):
+        if self.root == None:
+            return 0
+        def count(node):
+            if  node == None:
+                return 0
+            left_count = count(node.left)
+            right_count = count(node.right)
+            return 1 + left_count + right_count
+        return count(self.root)                    
+        
+    def get_count_leaf(self):
+        if self.root == None:
+            
+            def count(node):
+                if node == None:
+                    return 1
+                if node.left == None and node.right == None:
+                    return 1
+                return count(node.left) + count(node.right)
+            return count(self.root)            
+
+
+    def maxMin(self):
+        values = self.inorder()
+        print("Minimum ", values[0] )
+        print("Maximum ", values[len(values)-1])
 
 
 tree = BinarySearchTree()
-tree.insert(45)
-tree.insert(26)
-tree.insert(42)
-tree.insert(33)
-tree.insert(43)
-tree.insert(23)
-
-# print(tree.contains(42))
-# print(tree.contains(99))
-
-'''
-       45  
-   26        
-23    42
-   33    43    
-
-
-'''
-
-tree.bfs()  
-tree.preorder()
-tree.postorder()
-tree.inorder()
-
-print(tree.is_valid_tree())
+tree.insert(50)
+tree.insert(34)
+tree.insert(30)
+tree.insert(56)
+tree.insert(92)
+tree.insert(39)
+tree.insert(59)
+print(tree.getHeight())
+print(tree.countNode())
+tree.maxMin()
+print(tree.get_count_leaf())
