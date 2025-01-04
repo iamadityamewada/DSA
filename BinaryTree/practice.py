@@ -145,7 +145,11 @@ class BinarySearchTree:
             left_count = count(node.left)
             right_count = count(node.right)
             return 1 + left_count + right_count
-        return count(self.root)                    
+        return count(self.root)
+    
+
+    # def getCount():
+    #     c=0               
         
     def get_count_leaf(self):
         if self.root == None:
@@ -164,6 +168,123 @@ class BinarySearchTree:
         print("Minimum ", values[0] )
         print("Maximum ", values[len(values)-1])
 
+    def getDepth(self, val):
+        if self.root == None:
+            return - 1
+        temp = self.root
+        depth = 0
+        while True:
+            if temp.value == val:
+                break
+            elif temp.value > val:
+                temp = temp.left
+                depth +=1
+            elif temp.value < val:
+                temp = temp.right
+                depth +=1
+        return depth 
+
+    def getDiameter(self):
+        ls = []
+        if self.root == None:
+            return -1
+        def height(node):
+            if node == None:
+                return 0
+            left_height = height(node.left)
+            right_height = height(node.right)
+            ls.append(left_height + right_height)
+            return 1 + max(left_height,right_height)
+        height(self.root)
+        return max(ls)   
+
+    def isBalanced(self):
+        if self.root == None:
+            return True
+        self.balanced = True
+        def height(node):
+            if node == None:
+                return True
+            if node.left == None and node.right == None:
+                return True    
+            left_h = height(node.left)
+            right_h = height(node.right)
+            diff = abs(left_h - right_h)
+            if diff > 1:
+                self.balanced = False
+                return
+            return 1 + max(left_h,right_h)        
+        height(self.root)
+        return self.balanced   
+
+    # def lca(self,p,q):
+    #       if self.root == None:
+    #         return None
+    #       def findlca(node,p,q):
+    #         # (p < node.value and q > node.value) or (p > node.value and q < node.value):
+    #         temp = node   
+    #         if p < temp.value and q < temp.value:
+    #             temp = temp.left
+    #         elif p > temp.value and q > temp.value:
+    #             temp = temp.right
+    #         else:
+    #             return temp.value
+    #         return findlca(temp,p,q)
+    #       findlca(self.root,p,q)  
+    # 
+    
+    def lca(self, p , q):
+        if self.root == None:
+            return None
+        temp = self.root
+        while True:
+            if p < temp.value and  q < temp.value:
+                temp = temp.left
+            elif p > temp.value and  q > temp.value:
+                temp = temp.right
+            else:
+                return temp.value   
+
+    def sum(self):
+        if self.root == None:
+            return None
+        sum = 0
+        def findSum(node):
+            nonlocal sum
+            if node == None:
+                return None
+            if node:
+                sum += node.value     
+            if node.left:
+                findSum(node.left)
+            if node.right:
+                findSum(node.right)
+        findSum(self.root)        
+        return sum  
+    
+    def path(self,val):
+        if self.root == None:
+            return None
+        temp = self.root
+        path = []
+        while True:
+            if val < temp.value:
+                path.append(temp.value)
+                temp = temp.left
+            elif val>temp.value:
+                path.append(temp.value)
+                temp = temp.right
+            else:
+                break  
+        return path      
+                
+
+
+                 
+
+
+                
+
 
 tree = BinarySearchTree()
 tree.insert(50)
@@ -173,7 +294,18 @@ tree.insert(56)
 tree.insert(92)
 tree.insert(39)
 tree.insert(59)
-print(tree.getHeight())
-print(tree.countNode())
-tree.maxMin()
-print(tree.get_count_leaf())
+
+    #          50
+    #     34        56   
+    # 30     39            92
+    #                  59
+print(tree.path(39))
+# print(tree.sum())          
+# print(tree.lca(30,56))
+# print(tree.getDepth(59))
+# print(tree.getDiameter())
+# print(tree.isBalanced())
+# print(tree.getHeight())
+# print(tree.countNode())
+# tree.maxMin()
+# print(tree.get_count_leaf())
