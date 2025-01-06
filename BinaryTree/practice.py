@@ -295,7 +295,7 @@ tree.insert(92)
 tree.insert(39)
 tree.insert(59)
 
-    #          50
+    #          50 
     #     34        56   
     # 30     39            92
     #                  59
