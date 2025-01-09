@@ -57,6 +57,8 @@ class BinarySearchTree:
             if right:
                 queue.append(right)
         print(res)
+    
+    
 
     # def preorder(self):
     #     if self.root == None:
@@ -124,9 +126,33 @@ class BinarySearchTree:
         return True 
                                 
 
-    def print_tree(self):
-        # temp = self.root
-        pass
+    def zigzag(self):
+        queue = []
+        res = []
+        if self.root == None:
+            return []                
+        queue.append(self.root)     
+        while len(queue)>0:
+            res1 = []
+            count = 1
+            for i in range(len(queue)):
+                f_node = queue.pop(0)
+                res1.append(f_node.value)
+                left = f_node.left
+                right = f_node.right
+                if left:
+                  queue.append(left) 
+                if right:
+                  queue.append(right) 
+                count +=1               
+            # print(res1)            
+            if count % 2 == 0:
+                res.extend(res1)
+            else:
+                res1.reverse()
+                res.extend(res1) 
+            
+        print(res)            
 
 
 tree = BinarySearchTree()
@@ -136,22 +162,26 @@ tree.insert(42)
 tree.insert(33)
 tree.insert(43)
 tree.insert(23)
+tree.insert(46)
+tree.insert(49)
+tree.insert(47)
+tree.zigzag()
 
 # print(tree.contains(42))
 # print(tree.contains(99))
 
 '''
        45  
-   26        
-23    42
-   33    43    
+   26      46  
+23    42        49
+   33    43  47       
 
 
 '''
 
-tree.bfs()  
-tree.preorder()
-tree.postorder()
-tree.inorder()
+# tree.bfs()  
+# tree.preorder()
+# tree.postorder()
+# tree.inorder()
 
-print(tree.is_valid_tree())
+# print(tree.is_valid_tree())
