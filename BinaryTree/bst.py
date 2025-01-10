@@ -179,9 +179,9 @@ tree.zigzag()
 
 '''
 
-# tree.bfs()  
+# tree.bfs()
 # tree.preorder()
 # tree.postorder()
 # tree.inorder()
-
 # print(tree.is_valid_tree())
+
