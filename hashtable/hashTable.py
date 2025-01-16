@@ -1,5 +1,3 @@
-
-
 class HashTable:
     def __init__(self,size):
         self.size = size
@@ -49,8 +47,7 @@ class HashTable:
         for pair in box:
             if pair[0]==key:
                 box.remove(pair)
-        print("Pair deleted")                 
-                                        
+        print("Pair deleted")    
 
 hashtable = HashTable(10)
 hashtable.insert('student','Aditya')
