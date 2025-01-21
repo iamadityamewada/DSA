@@ -40,7 +40,7 @@ class Facebook:
             suggestion = []
             for friend in friends:
                 for user in friend.friends:
-                    if user not in friends and user.username is not username:
+                    if user not in friends and user.username is not username and user.username not in suggestion:
                         suggestion.append(user.username) 
             return suggestion 
         else:
@@ -53,8 +53,9 @@ fb.create_account("aadi")
 fb.add_connection("anshu","aditya")
 fb.add_connection("anshu","aadi")
 
+
 # print(fb.accounts["anshu"].friends)
 print(fb.find_friends("anshu"))
 print(fb.friend_suggestion("aadi"))
 
-        
+      

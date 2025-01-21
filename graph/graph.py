@@ -92,6 +92,69 @@ class Graph:
                         print(result)
                         return True
         return False                           
+    
+    def connected_node(self,node):
+        res = []
+        visited = []
+        queue = []
+        fnode = self.nodes[node]
+        queue.append(fnode)
+        visited.append(fnode)
+        while len(queue)>0:
+            node = queue.pop(0)
+            res.append(node.value)
+            for n in node.neighbors:
+                if n not in visited:
+                    queue.append(n)
+                    visited.append(n)
+        return res  
+    
+
+    def find_path(self,start,end):
+        res = []
+        que = []
+        visited = []
+        start_node = self.nodes[start]
+        que.append(start_node)
+        visited.append(start_node)
+        while len(que)>0:
+            node = que.pop(0)
+            res.append(node.value)
+            if node.value == end:
+                return res
+            for nb in node.neighbors:
+                if nb not in visited:
+                    que.append(nb)
+                    visited.append(nb)
+
+    def find_the_largest_island(self):
+        result = []
+        visited =[]
+        for node_name in self.nodes:
+            queue = []
+            first_node = self.nodes[node_name]
+            if first_node not in visited:
+                queue.append(first_node)
+                visited.append(first_node)
+                value = []
+            while len(queue)>0:
+                node = queue.pop(0)
+                value.append(node.value)
+                for n in node.neighbors:
+                    if n not in visited:
+                        queue.append(n)
+                        visited.append(n)
+            result.append(value)
+        print(result)    
+        return max(result, key=len) 
+                            
+
+
+
+            
+
+
+
 
 my_graph = Graph()
 print(my_graph.nodes)
@@ -105,7 +168,10 @@ my_graph.add_connection("B","D")
 my_graph.add_connection("D","E")
 my_graph.print_graph()
 # print(my_graph.bfs())
-print(my_graph.has_path("B","E"))
+# print(my_graph.has_path("B","E"))
+# print(my_graph.connected_node("A"))
+# print(my_graph.find_path("A","E"))
+print(my_graph.find_the_largest_island())
 
 
                 
