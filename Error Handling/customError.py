@@ -1,7 +1,7 @@
 class Number10Error(Exception):
     def __init__(self,msg,error_code):
         # self.msg = msg 
-        super().__init__(self,f"{msg} - {error_code}")
+        super().__init__(f"{msg} - {error_code}")
 
 num = int(input("Enter a number : "))
 
