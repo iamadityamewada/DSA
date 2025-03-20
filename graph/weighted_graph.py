@@ -1,3 +1,5 @@
+import heapq
+
 class Node:
     def __init__(self,value):
         self.value = value
@@ -69,8 +71,30 @@ wg.add_connections(2,3,1)
 wg.add_connections(3,5,2)
 wg.add_connections(4,2,2)
 wg.print_graph()
+# print(wg.total_distance(2))
 
-print(wg.total_distance(2))
+def dijkstras(nodes,start_node):
+    distances = {}
+    visited = []
+    for node in nodes:
+        distances[node] = float("inf")
+    distances[start_node] = 0
+    queue = [(distances[start_node],start_node)]
+    # queue.append((distances[start_node],start_node))
+    while len(queue)>0:
+        dis,node_val = heapq.heappop(queue)
+        node = nodes[node_val]
+        if node not in visited:
+            for nb, weight in node.neighbors:
+                current_dis = dis + weight
+                if current_dis < distances[nb.value]:
+                    distances[nb.value] = current_dis
+                    heapq.heappush(queue,(current_dis,nb.value))
+            visited.append(node)
+    return distances                
+
+
+print(dijkstras(wg.nodes,1))
 
 
 
