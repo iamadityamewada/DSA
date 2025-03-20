@@ -4,7 +4,7 @@ charac = input("enter a value a: ")
 
 
 try:
-    print(a)
+    # print(a)
     print(int(charac))
     print(6 + charac)
    
@@ -15,4 +15,10 @@ except TypeError as e:
 # except NameError as e:
 #     print(e)    
 except:
-    print("Some thing went wrong")    
+    print("Some thing went wrong")   
+
+else:
+    print("Try run succesfully")
+
+finally:
+    print("finally block")        
