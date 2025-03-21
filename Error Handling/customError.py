@@ -7,3 +7,6 @@ num = int(input("Enter a number : "))
 
 if num == 10:
     raise Number10Error("you can't enter number 10",501)
+
+
+    
