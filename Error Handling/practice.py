@@ -19,5 +19,5 @@ marks = int(input("Enter your marks : "))
 try:
     if marks<0 or marks>100:
         raise InvalidMarksError("Invalid Marks")
-except:
+except InvalidMarksError:
     print("Marks should be between in 1 to 100")    
