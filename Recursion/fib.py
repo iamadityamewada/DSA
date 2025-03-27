@@ -1,15 +1,29 @@
-def find_fib(n):
-    # series = [0]
-    def fib(n):
-        if n == 0 or n==1:
-            return 0
-        return fib(n) + fib(n-1)
+# def find_fib(n):
+#     # series = [0]
+#     def fib(n):
+#         if n <= 1:
+#             return 1
+#         return fib(n-1) + fib(n-2)
+#     find_fib(n)
     
-    find_fib()
+#     # if n == 0:
+#     #     return 0
     
-    # if n == 0:
-    #     return 0
-    
-    # return n + find_fib(n-1)
+#     # return n + find_fib(n-1)
 
-print(find_fib(7))
+
+def fib(n):
+     if n == 1:
+        return 1
+     elif n == 0:
+        return 0
+     return fib(n-1) + fib(n-2)
+  
+print(fib(5))
+# Recursion Tree
+
+    #                              __________________ fib(5)_________________
+    #                         fib(4)                                          fib(3)
+    #              fib(3)               fib(2)                        f(2)               f(1)
+    #       f(2)         f(1)      f(1)        f(0)              f(1)      f(0) 
+    # f(1)       f(0)                      
